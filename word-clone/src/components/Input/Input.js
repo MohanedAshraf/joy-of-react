@@ -1,21 +1,22 @@
 import { useState } from "react";
 
-function Input() {
-  const [word, setWord] = useState("");
+function Input({ setWords }) {
+  const [input, setInput] = useState("");
 
   function onSubmit(e) {
     e.preventDefault();
-    setWord("");
+    setInput("");
+    setWords((prev) => [...prev, input]);
   }
-  console.log(word);
+
   return (
     <>
       <form class="guess-input-wrapper" onSubmit={onSubmit}>
         <label for="guess-input">Enter guess:</label>
         <input
           id="guess-input"
-          value={word}
-          onChange={(e) => setWord(e.target.value)}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           minLength={5}
           maxLength={5}
           type="text"

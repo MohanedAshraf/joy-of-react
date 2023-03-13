@@ -1,16 +1,17 @@
 import { useState } from "react";
+import Guess from "../Guess/Guess";
 
 function WordList({ words }) {
-  console.log(words);
   return (
     <>
-      <div class="guess-results">
+      <Guess words={words} />
+      {/* <div class="guess-results">
         {words.map((word, idx) => (
           <p key={idx} class="guess">
             {word}
           </p>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

@@ -5,8 +5,11 @@ function WordList({ words }) {
   return (
     <>
       <div class="guess-results">
-        <p class="guess">FIRST</p>
-        <p class="guess">GUESS</p>
+        {words.map((word, idx) => (
+          <p key={idx} class="guess">
+            {word}
+          </p>
+        ))}
       </div>
     </>
   );

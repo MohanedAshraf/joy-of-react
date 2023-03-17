@@ -16,7 +16,7 @@ function Game() {
   return (
     <>
       <div>Put a game here!</div>
-      <Guess words={words} />
+      <Guess words={words} answer={answer} />
       <Input setWords={setWords} />
     </>
   );
